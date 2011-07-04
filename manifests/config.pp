@@ -26,5 +26,13 @@ class munin::config {
 			group => root,
 			mode => 0644,
 			content => template('munin/munin-apache.conf');
+
+		'plugins.conf':
+			ensure => present,
+			path => '/etc/munin/plugin-conf.d/munin-node',
+			owner => root,
+			group => root,
+			mode => 0644,
+			content => template('munin/munin-node.plugins');
 	}
 }
