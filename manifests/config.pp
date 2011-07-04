@@ -5,7 +5,7 @@ class munin::config {
 			path => '/etc/munin/munin.conf',
 			owner => root,
 			group => root,
-			mode => 0644,
+			mode => 0755,
 			content => template('munin/munin.conf');
 
 		'munin-node.conf':
@@ -13,7 +13,7 @@ class munin::config {
 			path => '/etc/munin/munin-node.conf',
 			owner => root,
 			group => root,
-			mode => 0644,
+			mode => 0755,
 			content => template('munin/munin-node.conf');
 
 		'munin-apache.conf':
@@ -24,7 +24,7 @@ class munin::config {
 			},
 			owner => root,
 			group => root,
-			mode => 0644,
+			mode => 0755,
 			content => template('munin/munin-apache.conf');
 
 		'plugins.conf':
@@ -32,7 +32,7 @@ class munin::config {
 			path => '/etc/munin/plugin-conf.d/munin-node',
 			owner => root,
 			group => root,
-			mode => 0644,
+			mode => 0755,
 			content => template('munin/munin-node.plugins');
 	}
 }
