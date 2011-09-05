@@ -1,5 +1,5 @@
 class munin::config {
-	file {
+	@file {
 		'munin.conf':
 			ensure => present,
 			path => '/etc/munin/munin.conf',
@@ -34,5 +34,11 @@ class munin::config {
 			group => root,
 			mode => 0755,
 			content => template('munin/munin-node.plugins');
+	}
+
+	realize(File['munin-node.conf', 'plugins.conf'])
+
+	if $munin::server == yes {
+		realize(File['munin.conf', 'munin-apache.conf'])
 	}
 }
