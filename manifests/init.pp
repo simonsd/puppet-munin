@@ -4,6 +4,7 @@ import 'services.pp'
 
 class munin (
 	$server = 'no',
+	$master = '127\.0\.0\.1',
 	$webserver = $::operatingsystem ? {
 		default => 'httpd',
 		debian => 'apache',
