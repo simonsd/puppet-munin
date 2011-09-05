@@ -16,4 +16,5 @@ class munin (
 		'munin::config':
 			before => Class['munin::services'];
 		'munin::services':;
+	}
 }
